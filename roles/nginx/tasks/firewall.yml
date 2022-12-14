@@ -1,0 +1,11 @@
+- name: Open ports
+  firewalld:
+    port: "{{ item.nginx_port }}/tcp"
+    state: enabled
+  with_items: "{{ vhosts }}"
+
+- name: Close ports
+  firewalld:
+    port: "{{ item.nginx_port }}/tcp"
+    state: disabled
+  with_items: "{{ removed_vhosts }}"

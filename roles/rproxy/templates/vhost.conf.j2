@@ -1,0 +1,15 @@
+upstream backend_hosts {
+  {% for host in groups['web'] %}
+    server {{ hostvars[host]['inventory_hostname'] }};
+  {% endfor %}
+}
+
+server {
+  listen       80;
+  server_name  webapp.tp2.lab;
+
+  location / {
+    proxy_pass   http://backend_hosts;
+    proxy_set_header    Host $host;
+  }
+}

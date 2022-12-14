@@ -1,0 +1,9 @@
+---
+- name: Install httpd
+  import_tasks: install.yml
+
+- name: Copy httpd.conf
+  import_tasks: config.yml
+
+- name: Configure firewall
+  import_tasks: firewall.yml

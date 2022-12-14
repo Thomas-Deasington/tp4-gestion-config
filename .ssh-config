@@ -1,0 +1,11 @@
+Host default
+  HostName 10.211.55.72
+  User vagrant
+  Port 22
+  UserKnownHostsFile /dev/null
+  StrictHostKeyChecking no
+  PasswordAuthentication no
+  IdentityFile "/Users/thomasdeasington/Documents/ynov/M2/gestion de configuration/gestion-config/tp4-gestion-config/.vagrant/machines/default/parallels/private_key"
+  IdentitiesOnly yes
+  LogLevel FATAL
+

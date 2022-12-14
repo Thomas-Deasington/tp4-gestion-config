@@ -1,0 +1,13 @@
+- name: Create sites-available directory
+  become: yes
+  file:
+    path: /etc/nginx/sites-available
+    state: directory
+
+- name: NGINX Virtual Host
+  become: yes
+  template:
+    src: vhost.conf.j2
+    dest: /etc/nginx/sites-available/webapp.tp2.lab.conf
+  notify:
+    - Restart NGINX

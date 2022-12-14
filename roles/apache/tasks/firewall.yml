@@ -1,0 +1,10 @@
+---
+- name: configure firewall
+  firewalld:
+    port: "80/tcp"
+    state: enabled
+    permanent: yes
+    immediate: yes
+  become: yes
+  notify:
+    - Restart httpd
